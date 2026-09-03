@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocar Senha · Sistema do Adestrador</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a href="/dashboard" class="marca">🐾 Sistema do Adestrador</a>
+        <a href="/logout" class="link-sair">Sair</a>
+    </header>
+    <main class="conteudo">
+        <p class="trilha"><a href="/dashboard">Painel</a> / Trocar Senha</p>
+        <h1>Trocar Senha</h1>
+
+        {% if erro %}
+        <p class="aviso-erro">{{ erro }}</p>
+        {% endif %}
+        {% if sucesso %}
+        <p class="mensagem-sucesso">{{ sucesso }}</p>
+        {% endif %}
+
+        <section class="painel-formulario">
+            <form method="post" action="/trocar-senha">
+                <label for="senha_atual">Senha atual</label>
+                <input type="password" id="senha_atual" name="senha_atual" required>
+
+                <label for="nova_senha">Nova senha</label>
+                <input type="password" id="nova_senha" name="nova_senha" required minlength="4">
+
+                <label for="confirmar_senha">Confirmar nova senha</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" required minlength="4">
+
+                <div class="acoes-formulario">
+                    <button type="submit">Salvar nova senha</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda · Sistema do Adestrador</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a href="/dashboard" class="marca">🐾 Sistema do Adestrador</a>
+        <a href="/logout" class="link-sair">Sair</a>
+    </header>
+    <main class="conteudo">
+        <p class="trilha"><a href="/dashboard">Painel</a> / Agenda</p>
+        <h1>Agenda</h1>
+
+        <section class="painel-formulario painel-formulario-largo">
+            <h2 id="titulo-formulario">Novo agendamento</h2>
+            <form id="form-agendamento">
+                <input type="hidden" id="agendamento-id">
+
+                <label for="data">Data</label>
+                <input type="date" id="data" required>
+
+                <label for="horario">Horário</label>
+                <input type="time" id="horario" required>
+
+                <label for="cliente_id">Cliente</label>
+                <select id="cliente_id" required>
+                    <option value="">Carregando clientes...</option>
+                </select>
+
+                <label for="cachorro_id">Cachorro</label>
+                <select id="cachorro_id" required>
+                    <option value="">Carregando cachorros...</option>
+                </select>
+
+                <label for="plano_id">Plano</label>
+                <select id="plano_id" required>
+                    <option value="">Carregando planos...</option>
+                </select>
+
+                <div class="acoes-formulario">
+                    <button type="submit" id="botao-salvar">Salvar</button>
+                    <button type="button" id="botao-cancelar" class="botao-secundario" hidden>Cancelar edição</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel-lista">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Horário</th>
+                        <th>Cliente</th>
+                        <th>Cachorro</th>
+                        <th>Plano</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela"></tbody>
+            </table>
+            <p id="mensagem-lista-vazia" hidden>Nenhum agendamento cadastrado ainda.</p>
+        </section>
+    </main>
+
+    <script src="/static/js/agenda.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diário de Bordo · Sistema do Adestrador</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a href="/dashboard" class="marca">🐾 Sistema do Adestrador</a>
+        <a href="/logout" class="link-sair">Sair</a>
+    </header>
+    <main class="conteudo">
+        <p class="trilha"><a href="/dashboard">Painel</a> / <a href="/agenda">Agenda</a> / Diário de Bordo</p>
+        <h1 id="titulo-sessao">Diário de Bordo</h1>
+        <p class="texto-ajuda">Estas anotações podem ser editadas a qualquer momento, mesmo depois que a aula for marcada como concluída.</p>
+
+        <section class="painel-formulario painel-formulario-largo">
+            <form id="form-anotacoes" data-agendamento-id="{{ agendamento_id }}">
+                <label for="anotacoes">Anotações da sessão</label>
+                <textarea id="anotacoes" rows="8"></textarea>
+
+                <div class="acoes-formulario">
+                    <button type="submit" id="botao-salvar">Salvar anotações</button>
+                    <a href="/agenda" class="botao-secundario botao-link">Voltar para Agenda</a>
+                </div>
+            </form>
+            <p id="mensagem-status" hidden></p>
+        </section>
+    </main>
+
+    <script src="/static/js/anotacoes.js"></script>
+</body>
+</html>

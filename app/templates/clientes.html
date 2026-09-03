@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes · Sistema do Adestrador</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a href="/dashboard" class="marca">🐾 Sistema do Adestrador</a>
+        <a href="/logout" class="link-sair">Sair</a>
+    </header>
+    <main class="conteudo">
+        <p class="trilha"><a href="/dashboard">Painel</a> / Clientes</p>
+        <h1>Clientes</h1>
+
+        <section class="painel-formulario">
+            <h2 id="titulo-formulario">Novo cliente</h2>
+            <form id="form-cliente">
+                <input type="hidden" id="cliente-id">
+
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" required>
+
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" required>
+
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco">
+
+                <div class="acoes-formulario">
+                    <button type="submit" id="botao-salvar">Salvar</button>
+                    <button type="button" id="botao-cancelar" class="botao-secundario" hidden>Cancelar edição</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel-lista">
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela"></tbody>
+            </table>
+            <p id="mensagem-lista-vazia" hidden>Nenhum cliente cadastrado ainda.</p>
+        </section>
+    </main>
+
+    <script src="/static/js/clientes.js"></script>
+</body>
+</html>

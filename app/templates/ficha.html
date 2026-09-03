@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Avaliação · Sistema do Adestrador</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="topo">
+        <a href="/dashboard" class="marca">🐾 Sistema do Adestrador</a>
+        <a href="/logout" class="link-sair">Sair</a>
+    </header>
+    <main class="conteudo">
+        <p class="trilha"><a href="/dashboard">Painel</a> / <a href="/cachorros">Cachorros</a> / Ficha de Avaliação</p>
+        <h1 id="titulo-cachorro">Ficha de Avaliação</h1>
+
+        <section class="painel-formulario painel-formulario-largo">
+            <form id="form-ficha" data-cachorro-id="{{ cachorro_id }}">
+                <label for="queixa_principal">Queixa principal</label>
+                <textarea id="queixa_principal" rows="3"></textarea>
+
+                <label for="historico_comportamento">Histórico de comportamento</label>
+                <textarea id="historico_comportamento" rows="4"></textarea>
+
+                <label for="expectativa_dono">Expectativa do dono</label>
+                <textarea id="expectativa_dono" rows="3"></textarea>
+
+                <div class="acoes-formulario">
+                    <button type="submit" id="botao-salvar">Salvar ficha</button>
+                    <a href="/cachorros" class="botao-secundario botao-link">Voltar para Cachorros</a>
+                </div>
+            </form>
+            <p id="mensagem-status" hidden></p>
+        </section>
+    </main>
+
+    <script src="/static/js/ficha.js"></script>
+</body>
+</html>
